@@ -8,10 +8,10 @@ extra-source-files: CHANGELOG.md
 library
   exposed-modules:
     BinaryTree
-    Parking
-    ParkingNat
     Extensions.THDefinition
     Extensions.THExecution
+    Parking
+    ParkingNat
 
   build-depends:
     , base              ^>=4.16.4.0
@@ -23,7 +23,7 @@ library
 executable haskell-interview
   main-is:          Main.hs
   build-depends:
-    , base   ^>=4.16.4.0
+    , base               ^>=4.16.4.0
     , haskell-interview
 
   hs-source-dirs:   app
