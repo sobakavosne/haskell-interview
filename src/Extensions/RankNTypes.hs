@@ -1,4 +1,3 @@
-{-# LANGUAGE GADTs      #-}
 {-# LANGUAGE RankNTypes #-}
 
 module Extensions.RankNTypes where
