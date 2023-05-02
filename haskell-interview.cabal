@@ -16,9 +16,11 @@ library
     LiftedUnlifted
     Parking
     ParkingNat
+    Transformer
 
   build-depends:
     , base              ^>=4.16.4.0
+    , mtl
     , template-haskell
 
   hs-source-dirs:   src
