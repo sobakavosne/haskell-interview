@@ -14,6 +14,7 @@ library
     Extensions.THDefinition
     Extensions.THExecution
     LiftedUnlifted
+    AlexaChallenge
     Parking
     ParkingNat
     Transformer
