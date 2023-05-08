@@ -7,6 +7,7 @@ extra-source-files: CHANGELOG.md
 
 library
   exposed-modules:
+    AlexaChallenge
     BinaryTree
     ConcurrentParralel
     Extensions.GADTs
@@ -14,9 +15,9 @@ library
     Extensions.THDefinition
     Extensions.THExecution
     LiftedUnlifted
-    AlexaChallenge
     Parking
     ParkingNat
+    -- RadixTree
     Transformer
 
   build-depends:
