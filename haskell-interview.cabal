@@ -1,24 +1,24 @@
 cabal-version:      3.6
 name:               haskell-interview
 version:            0.1.0.0
-author:             sobakavosne
-maintainer:         sobakavosne@protonmail.com
+author:             Dzmitry L.
+maintainer:         dima.lenchevskii@gmail.com
 extra-source-files: CHANGELOG.md
 
 library
   exposed-modules:
-    AlexaChallenge
-    BinaryTree
-    ConcurrentParralel
+    Challenges.Alexa
     Extensions.GADTs
     Extensions.RankNTypes
     Extensions.THDefinition
     Extensions.THExecution
-    LiftedUnlifted
-    Parking
-    ParkingNat
-    -- RadixTree
-    Transformer
+    Parking.Parking
+    Parking.ParkingNat
+    Theory.ConcurrentParralel
+    Theory.LiftedUnlifted
+    Theory.Transformer
+    Trees.BinaryTree
+    Trees.RadixTree
 
   build-depends:
     , base              ^>=4.16.4.0
