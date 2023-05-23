@@ -5,6 +5,7 @@ import functools as F
 import builtins as B
 
 
+# the evaluation of function composition is started from the last function
 def compose(*fns):
   return F.reduce(
     lambda f, g: lambda x: f(g(x)), 
@@ -29,7 +30,7 @@ def maxDepth(string):
   return compose(
     B.max,
     scan,
-    lambda lst: map(lambda x: 1 if x == '(' else 0, lst),
+    mapBraces,
     filterBraces,
     list
   )(string)

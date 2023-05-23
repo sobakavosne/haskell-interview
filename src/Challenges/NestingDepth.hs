@@ -9,4 +9,4 @@ maxDepth = maximum
          . map (\ c -> if c == '(' then 1 else -1)
          . filter (`elem` ['(',')'])
 
--- $> maxDepth "(1 + (3 / (10 - 5)))"
+-- $> maxDepth "(1 + (10 - 5 (10 (10 - 5) - 5)) (3 / (10 - 5)))"
