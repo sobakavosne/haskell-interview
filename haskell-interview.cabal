@@ -8,13 +8,15 @@ extra-source-files: CHANGELOG.md
 library
   exposed-modules:
     Challenges.Alexa
+    Challenges.NestingDepth
+    Challenges.UniquePath
     Extensions.GADTs
     Extensions.RankNTypes
     Extensions.THDefinition
     Extensions.THExecution
     Parking.Parking
     Parking.ParkingNat
-    Theory.ConcurrentParralel
+    Theory.ConcurrentParallel
     Theory.LiftedUnlifted
     Theory.Transformer
     Trees.BinaryTree
@@ -24,6 +26,7 @@ library
     , base              ^>=4.16.4.0
     , mtl
     , template-haskell
+    , vector
 
   hs-source-dirs:   src
   default-language: Haskell2010

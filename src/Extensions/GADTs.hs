@@ -1,5 +1,7 @@
 {-# LANGUAGE GADTs #-}
 
+module Extensions.GADTs where
+
 -- data Term a
 --   = Lit Int
 --   | Succ (Term Int)

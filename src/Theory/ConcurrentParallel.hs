@@ -27,6 +27,8 @@
 -- async :: IO () -> IO AsyncId
 {-# LANGUAGE BlockArguments #-}
 
+module Theory.ConcurrentParallel where
+
 import           Control.Monad (replicateM)
 import           Data.IORef    (IORef, newIORef, readIORef)
 import           GHC.Conc      (STM, TVar, atomically, newTVar, readTVar,
