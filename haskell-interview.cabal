@@ -8,7 +8,9 @@ extra-source-files: CHANGELOG.md
 library
   exposed-modules:
     Challenges.Alexa
+    Challenges.BinarySearch
     Challenges.NestingDepth
+    Challenges.QuickSort
     Challenges.UniquePath
     Extensions.GADTs
     Extensions.RankNTypes
