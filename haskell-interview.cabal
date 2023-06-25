@@ -9,6 +9,10 @@ library
   exposed-modules:
     Challenges.Alexa
     Challenges.BinarySearch
+    Challenges.Counter
+    Challenges.DescendingOrder
+    Challenges.Difference
+    Challenges.MultiplesOf3And5
     Challenges.NestingDepth
     Challenges.QuickSort
     Challenges.UniquePath
