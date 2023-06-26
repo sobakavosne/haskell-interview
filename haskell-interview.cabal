@@ -10,12 +10,16 @@ library
     Challenges.Alexa
     Challenges.BinarySearch
     Challenges.Counter
-    Challenges.DescendingOrder
-    Challenges.Difference
-    Challenges.MultiplesOf3And5
     Challenges.NestingDepth
     Challenges.QuickSort
     Challenges.UniquePath
+    Codewars.DescendingOrder
+    Codewars.Difference
+    Codewars.MultiplesOf3And5
+    Codewars.OddOrEven
+    Codewars.PerfectSquare
+    Codewars.ReplaceWithAlphabetPosition
+    Codewars.SortOddNumbers
     Extensions.GADTs
     Extensions.RankNTypes
     Extensions.THDefinition

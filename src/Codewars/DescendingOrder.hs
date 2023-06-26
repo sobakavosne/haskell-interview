@@ -1,4 +1,4 @@
-module Challenges.DescendingOrder where
+module Codewars.DescendingOrder where
 
 import           Data.List (sortOn)
 import           Data.Ord  (Down (Down))
