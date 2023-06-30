@@ -13,8 +13,10 @@ library
     Challenges.NestingDepth
     Challenges.QuickSort
     Challenges.UniquePath
+    Codewars.BreakCamelCase
     Codewars.DescendingOrder
     Codewars.Difference
+    Codewars.HighestScoringWord
     Codewars.MultiplesOf3And5
     Codewars.OddOrEven
     Codewars.PerfectSquare
