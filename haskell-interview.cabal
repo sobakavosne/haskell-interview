@@ -10,8 +10,10 @@ library
     Challenges.Alexa
     Challenges.BinarySearch
     Challenges.Counter
+    Challenges.Median
     Challenges.NestingDepth
     Challenges.QuickSort
+    Challenges.TernarySearch
     Challenges.Triplets
     Challenges.UniquePath
     Codewars.BreakCamelCase
