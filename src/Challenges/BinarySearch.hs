@@ -12,4 +12,6 @@ binarySearch l@(x:xs) item
       | z < item = binarySearch zs item
       | otherwise = Just item
 --
--- $> binarySearch [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] 8
+-- TODO: fix `empty list` exception
+--
+-- $> binarySearch [1, 2, 3, 4, 5, 9, 10] 8
