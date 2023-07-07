@@ -25,6 +25,7 @@ library
     Codewars.PerfectSquare
     Codewars.ReplaceWithAlphabetPosition
     Codewars.SortOddNumbers
+    Dynamic.Knapsack
     Extensions.GADTs
     Extensions.RankNTypes
     Extensions.THDefinition
