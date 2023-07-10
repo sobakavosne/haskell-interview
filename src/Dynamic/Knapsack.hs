@@ -51,18 +51,6 @@ instance Show Item where
   show (Item name itemSize value) =
     show name ++ " " ++ show itemSize ++ " " ++ show value
 
-instance Eq Item where
-  (==) (Item _ _ valueX) (Item _ _ valueY) = valueX == valueY
-  (/=) x y = not (x == y)
-
-instance Ord Item where
-  (<) (Item _ _ valueX) (Item _ _ valueY) = valueX < valueY
-  (<=) (Item _ _ valueX) (Item _ _ valueY) = valueX <= valueY
-  (>) (Item _ _ valueX) (Item _ _ valueY) = valueX > valueY
-  (>=) (Item _ _ valueX) (Item _ _ valueY) = valueX >= valueY
-  -- max = _
-  -- min = _
-
 data Knapsack =
   Knapsack
     { knapsackSize :: Size
@@ -94,11 +82,8 @@ mostValueableButStupid (List items) size =
     , foldl (\acc (Item x (Size s) z) -> acc + s) 0 x <= size
     ]
 
---
 -- | Dynamic solution
 mostValueable :: Knapsack
 mostValueable = undefined
 --
 -- $> mostValueableButStupid _items 4
---
---- $> _items
