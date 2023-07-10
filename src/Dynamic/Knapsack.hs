@@ -53,8 +53,8 @@ instance Show Item where
 
 data Knapsack =
   Knapsack
-    { knapsackSize :: Size
-    , items        :: [Item]
+    { kSize  :: Size
+    , kItems :: [Item]
     }
 
 instance Show Knapsack where
@@ -72,14 +72,14 @@ _items =
     ]
 
 -- | Brutto solution
-mostValueableButStupid :: List Item -> Int -> Knapsack
+mostValueableButStupid :: List Item -> Size -> Knapsack
 mostValueableButStupid (List items) size =
-  Knapsack (Size size) $
+  Knapsack size $
   maximumBy
     (compare `on` sum . map value)
     [ x
     | x <- subsequences items
-    , foldl (\acc (Item x (Size s) z) -> acc + s) 0 x <= size
+    , foldl (\acc item -> acc + itemSize item) 0 x <= size
     ]
 
 -- | Dynamic solution
