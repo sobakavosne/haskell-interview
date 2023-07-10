@@ -3,7 +3,9 @@
 
 module Dynamic.Knapsack where
 
-import           Data.List (subsequences)
+import           Data.Foldable (Foldable (..), maximumBy)
+import           Data.Function (on)
+import           Data.List     (subsequences)
 
 -- NP-complete problem in combinatorial optimization
 -- https://en.wikipedia.org/wiki/Knapsack_problem
@@ -50,49 +52,53 @@ instance Show Item where
     show name ++ " " ++ show itemSize ++ " " ++ show value
 
 instance Eq Item where
-  (==) (Item _ sizeX _) (Item _ sizeY _) = sizeX == sizeY
+  (==) (Item _ _ valueX) (Item _ _ valueY) = valueX == valueY
   (/=) x y = not (x == y)
 
 instance Ord Item where
-  (<) (Item _ sizeX _) (Item _ sizeY _) = sizeX < sizeY
-  (<=) (Item _ sizeX _) (Item _ sizeY _) = sizeX <= sizeY
-  (>) (Item _ sizeX _) (Item _ sizeY _) = sizeX > sizeY
-  (>=) (Item _ sizeX _) (Item _ sizeY _) = sizeX >= sizeY
+  (<) (Item _ _ valueX) (Item _ _ valueY) = valueX < valueY
+  (<=) (Item _ _ valueX) (Item _ _ valueY) = valueX <= valueY
+  (>) (Item _ _ valueX) (Item _ _ valueY) = valueX > valueY
+  (>=) (Item _ _ valueX) (Item _ _ valueY) = valueX >= valueY
   -- max = _
   -- min = _
 
 data Knapsack =
   Knapsack
-    { items        :: [Item]
-    , knapsackSize :: Size
+    { knapsackSize :: Size
+    , items        :: [Item]
     }
 
 instance Show Knapsack where
   show :: Knapsack -> String
-  show (Knapsack elems size) =
+  show (Knapsack size elems) =
     "Knapsack size: " ++ show size ++ "\nElements: " ++ show elems
 
 _items :: List Item
 _items =
   List
     [ Item "Guitar" (Size 1) (Value 1500)
-    , Item "Computer" (Size 3) (Value 2000)
-    , Item "Record Player" (Size 4) (Value 3000)
-    , Item "Phone" (Size 1) (Value 2500)
+    , Item "Phone" (Size 2) (Value 2500)
+    , Item "Brown fox" (Size 1) (Value 1000)
+    , Item "Brown fox" (Size 1) (Value 500)
     ]
 
-_knapsack :: Knapsack
-_knapsack = Knapsack [] $ Size 4
-
 -- | Brutto solution
--- mostValueableButStupid :: [Item] -> Knapsack -> [a]
--- mostValueableButStupid (List items) (Knapsack _ (Size size)) =
---   [x | x <- subsequences items, foldl1 (+) x <= 4]
+mostValueableButStupid :: List Item -> Int -> Knapsack
+mostValueableButStupid (List items) size =
+  Knapsack (Size size) $
+  maximumBy
+    (compare `on` sum . map value)
+    [ x
+    | x <- subsequences items
+    , foldl (\acc (Item x (Size s) z) -> acc + s) 0 x <= size
+    ]
+
 --
 -- | Dynamic solution
 mostValueable :: Knapsack
 mostValueable = undefined
 --
---- $> mostValueableButStupid _items _knapsack
+-- $> mostValueableButStupid _items 4
 --
--- $> _items
+--- $> _items
