@@ -3,7 +3,7 @@
 
 module Dynamic.Knapsack where
 
-import           Data.Foldable (Foldable (..), maximumBy)
+import           Data.Foldable (maximumBy)
 import           Data.Function (on)
 import           Data.List     (subsequences)
 
@@ -25,9 +25,9 @@ type Name = String
 
 data Item =
   Item
-    { name     :: Name
-    , itemSize :: Size
-    , value    :: Value
+    { name   :: Name
+    , iSize  :: Size
+    , iValue :: Value
     }
 
 instance Show a => Show (List a) where
@@ -48,8 +48,8 @@ instance Show Value where
 
 instance Show Item where
   show :: Item -> String
-  show (Item name itemSize value) =
-    show name ++ " " ++ show itemSize ++ " " ++ show value
+  show (Item name size value) =
+    show name ++ " " ++ show size ++ " " ++ show value
 
 data Knapsack =
   Knapsack
@@ -62,28 +62,37 @@ instance Show Knapsack where
   show (Knapsack size elems) =
     "Knapsack size: " ++ show size ++ "\nElements: " ++ show elems
 
-_items :: List Item
+_items :: [Item]
 _items =
-  List
-    [ Item "Guitar" (Size 1) (Value 1500)
-    , Item "Phone" (Size 2) (Value 2500)
-    , Item "Brown fox" (Size 1) (Value 1000)
-    , Item "Brown fox" (Size 1) (Value 500)
+  [ Item "Guitar" (Size 1) (Value 1500)
+  , Item "Phone" (Size 2) (Value 2500)
+  , Item "Brown fox" (Size 1) (Value 1000)
+  , Item "Brown fox" (Size 1) (Value 500)
+  ]
+
+-- | Brutto solution in order to reuse in the dynamic one
+mostValueable :: Size -> [Item] -> [Item]
+mostValueable size items =
+  maximumBy
+    (compare `on` sum . map iValue)
+    [ x
+    | x <- subsequences items
+    , foldl (\acc item -> acc + iSize item) 0 x <= size
     ]
 
 -- | Brutto solution
-mostValueableButStupid :: List Item -> Size -> Knapsack
-mostValueableButStupid (List items) size =
-  Knapsack size $
-  maximumBy
-    (compare `on` sum . map value)
-    [ x
-    | x <- subsequences items
-    , foldl (\acc item -> acc + itemSize item) 0 x <= size
-    ]
+mostValueableB :: Size -> [Item] -> Knapsack
+mostValueableB size = Knapsack size . mostValueable size
 
 -- | Dynamic solution
-mostValueable :: Knapsack
-mostValueable = undefined
+-- mostValueableD items size = moveRight items size
+--   where
+--     moveRight (x:xs) s =
+--       case s of
+--         Size 1 -> moveDown [] 1
+--         _      -> moveRight (moveDown x xs s) (s - 1)
+
+--     moveDown _ [z] s    = mostValueable s [z]
+--     moveDown x (z:zs) s = moveDown (mostValueable s (x ++ [z])) zs s
 --
--- $> mostValueableButStupid _items 4
+-- $> mostValueableB 4 _items
