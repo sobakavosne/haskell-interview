@@ -26,6 +26,7 @@ library
     Codewars.ReplaceWithAlphabetPosition
     Codewars.SortOddNumbers
     Dynamic.Knapsack
+    EncryptionProtocol.DiffieHellman
     Extensions.GADTs
     Extensions.RankNTypes
     Extensions.THDefinition
