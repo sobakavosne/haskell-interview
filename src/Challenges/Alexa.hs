@@ -18,4 +18,24 @@ removeMatch m = drop (length m)
 
 dictionary :: [String]
 dictionary = ["foo", "bar", "fizz", "fir", "fi", "iop"]
+
 -- $> removeMatch "foo" "foobar"
+--
+----------------------------------------------------------------
+-- Function that checks whether string s can be constructed from words in the list
+canConstruct :: String -> [String] -> Bool
+canConstruct word words = go word
+  where
+    go [] = True -- If the string is empty, it can be constructed
+    go str =
+      any
+        (\word -> (word `isPrefixOf` str) && go (drop (length word) str))
+        words
+
+wordList :: [String]
+wordList = ["Foo", "Bar", "Car", "Bob", "Sirius"]
+
+inputWord :: String
+inputWord = "FooBarSirius"
+
+-- $> canConstruct inputWord wordList
