@@ -43,6 +43,7 @@ library
     , base              ^>=4.16.4.0
     , containers
     , mtl
+    , suffixtree
     , template-haskell
     , vector
 

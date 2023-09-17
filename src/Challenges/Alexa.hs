@@ -1,6 +1,8 @@
 module Challenges.Alexa where
 
-import           Data.List (isPrefixOf)
+import           Data.List       (insert, isPrefixOf)
+import qualified Data.SuffixTree as SufT
+import           Prelude         hiding (elem)
 
 -- foobar
 -- barfoo
@@ -37,5 +39,14 @@ wordList = ["Foo", "Bar", "Car", "Bob", "Sirius"]
 
 inputWord :: String
 inputWord = "FooBarSirius"
-
+--
 -- $> canConstruct inputWord wordList
+--
+----------------------------------------------------------------
+-- isCompaund :: String -> SufT.STree -> Bool
+-- isCompaund :: String -> [String] -> Bool
+-- isCompaund word xs = word `SufT.elem` tree
+--
+-- tree = SufT.construct ["Key", "Word", "Insert"]
+--
+--- $> isCompaund "Key" ["Key", "Word", "Insert"]
