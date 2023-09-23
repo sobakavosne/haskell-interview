@@ -17,14 +17,14 @@ library
     Challenges.Triplets
     Challenges.UniquePath
     Codewars.BreakCamelCase
-    Codewars.DescendingOrder
-    Codewars.Difference
     Codewars.HighestScoringWord
-    Codewars.MultiplesOf3And5
-    Codewars.OddOrEven
-    Codewars.PerfectSquare
-    Codewars.ReplaceWithAlphabetPosition
-    Codewars.SortOddNumbers
+    Codewars.Kyu6.Difference
+    Codewars.Kyu6.MultiplesOf3And5
+    Codewars.Kyu6.ReplaceWithAlphabetPosition
+    Codewars.Kyu6.SortOddNumbers
+    Codewars.Kyu7.DescendingOrder
+    Codewars.Kyu7.OddOrEven
+    Codewars.Kyu7.PerfectSquare
     Dynamic.Knapsack
     EncryptionProtocol.DiffieHellman
     Extensions.GADTs

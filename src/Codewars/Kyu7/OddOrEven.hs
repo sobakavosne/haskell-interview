@@ -1,4 +1,4 @@
-module Codewars.OddOrEven where
+module Codewars.Kyu7.OddOrEven where
 
 import           Data.Bool (bool)
 

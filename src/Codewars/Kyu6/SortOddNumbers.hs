@@ -1,4 +1,4 @@
-module Codewars.SortOddNumbers where
+module Codewars.Kyu6.SortOddNumbers where
 
 import           Data.List  (sortOn)
 import           Data.Maybe (fromMaybe)

@@ -1,6 +1,6 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
-module Codewars.PerfectSquare where
+module Codewars.Kyu7.PerfectSquare where
 
 import           Data.Typeable (Typeable, cast)
 

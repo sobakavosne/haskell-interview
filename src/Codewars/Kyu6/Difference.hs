@@ -1,4 +1,4 @@
-module Codewars.Difference where
+module Codewars.Kyu6.Difference where
 
 -- Your goal in this kata is to implement
 -- a difference function, which subtracts

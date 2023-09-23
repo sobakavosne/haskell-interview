@@ -1,4 +1,4 @@
-module Codewars.ReplaceWithAlphabetPosition where
+module Codewars.Kyu6.ReplaceWithAlphabetPosition where
 
 import           Data.Char  (isAlpha, isLatin1, toLower)
 import           Data.Maybe (fromMaybe)

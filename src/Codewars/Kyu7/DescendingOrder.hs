@@ -1,4 +1,4 @@
-module Codewars.DescendingOrder where
+module Codewars.Kyu7.DescendingOrder where
 
 import           Data.List (sortOn)
 import           Data.Ord  (Down (Down))
