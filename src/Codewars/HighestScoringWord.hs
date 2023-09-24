@@ -16,16 +16,16 @@ import           Data.Maybe (fromJust)
 --
 -- All letters will be lowercase and all inputs will be valid.
 --
--- high :: String -> String
--- high = map desypher . show . maximum . map (readToInt . sypher) . words
 high :: String -> String
-high = desypher . maximumBySum . sortOn length . sypher . words
+high = desypher . snd . maximumBySum . zip [1 ..] . sypher . words
   where
-    readToInt :: String -> Int
-    readToInt = read
+    sumOfSnd = sum . map read . snd
     maximumBySum =
       maximumBy
-        (\a b -> compare (sum (map readToInt a)) (sum (map readToInt b)))
+        (\a b ->
+           case compare (sumOfSnd a) (sumOfSnd b) of
+             EQ    -> compare (fst b) (fst a)
+             other -> other)
     alphabet = zip ['a' .. 'z'] [1 .. 26]
     sypher = map $ map (show . fromJust . (`lookup` alphabet))
     desypher = map $ fromJust . (`lookup` [(k, v) | (v, k) <- alphabet]) . read
