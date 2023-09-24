@@ -16,8 +16,8 @@ library
     Challenges.TernarySearch
     Challenges.Triplets
     Challenges.UniquePath
-    Codewars.BreakCamelCase
     Codewars.HighestScoringWord
+    Codewars.Kyu6.BreakCamelCase
     Codewars.Kyu6.Difference
     Codewars.Kyu6.MultiplesOf3And5
     Codewars.Kyu6.ReplaceWithAlphabetPosition

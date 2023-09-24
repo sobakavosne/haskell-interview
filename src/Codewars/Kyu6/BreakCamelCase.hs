@@ -1,4 +1,4 @@
-module Codewars.BreakCamelCase where
+module Codewars.Kyu6.BreakCamelCase where
 
 import           Data.Char   (isUpper)
 import           GHC.Unicode (isAlpha)
