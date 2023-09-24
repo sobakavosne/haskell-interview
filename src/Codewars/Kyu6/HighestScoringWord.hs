@@ -1,4 +1,4 @@
-module Codewars.HighestScoringWord where
+module Codewars.Kyu6.HighestScoringWord where
 
 import           Data.List  (maximumBy, sortOn)
 import           Data.Maybe (fromJust)
