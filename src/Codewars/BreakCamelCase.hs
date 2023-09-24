@@ -1,6 +1,7 @@
 module Codewars.BreakCamelCase where
 
-import           Data.Char (isLower, isUpper)
+import           Data.Char   (isUpper)
+import           GHC.Unicode (isAlpha)
 
 -- Complete the solution so that the function will break up
 -- camel casing, using a space between words.
@@ -11,13 +12,15 @@ import           Data.Char (isLower, isUpper)
 -- "identifier"   =>  "identifier"
 -- ""             =>  ""
 --
+cases :: [String]
+cases = ["VcyVVshwfgV", "Yxsday", "Zedzweok", "Alk", "Xwn", "J", "Dyb"]
+
 solution :: String -> String
 solution [] = ""
 solution [x1] = [x1]
-solution (x1:x2:xs)
-  | isLower x1 && isUpper x2 = x1 : ' ' : x2 : solution xs
-  | otherwise = x1 : solution (x2 : xs)
+solution (x:xs)
+  | isAlpha x && (isUpper . head) xs = x : ' ' : solution xs
+  | otherwise = x : solution xs
 --
--- $> solution "Zedzweok"
-
--- ["Vcyshwfg","Yxsday","Zedzweok","Alk","Xwn","J","Dyb"]
+-- $> map solution cases
+--
