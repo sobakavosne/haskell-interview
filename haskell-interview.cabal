@@ -16,9 +16,9 @@ library
     Challenges.TernarySearch
     Challenges.Triplets
     Challenges.UniquePath
-    Codewars.Kyu6.HighestScoringWord
     Codewars.Kyu6.BreakCamelCase
     Codewars.Kyu6.Difference
+    Codewars.Kyu6.HighestScoringWord
     Codewars.Kyu6.MultiplesOf3And5
     Codewars.Kyu6.ReplaceWithAlphabetPosition
     Codewars.Kyu6.SortOddNumbers
@@ -40,7 +40,7 @@ library
     Trees.RadixTree
 
   build-depends:
-    , base              ^>=4.16.4.0
+    , base
     , containers
     , mtl
     , suffixtree
@@ -53,7 +53,7 @@ library
 executable haskell-interview
   main-is:          Main.hs
   build-depends:
-    , base               ^>=4.16.4.0
+    , base
     , haskell-interview
 
   hs-source-dirs:   app
@@ -64,4 +64,4 @@ test-suite haskell-interview-tests
   type:             exitcode-stdio-1.0
   hs-source-dirs:   tests src
   main-is:          THExample.hs
-  build-depends:    base ^>=4.16.4.0
+  build-depends:    base
