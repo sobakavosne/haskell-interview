@@ -1,7 +1,7 @@
 {-# LANGUAGE TemplateHaskell #-}
 
 module Extensions.THExecution
-  ( executeTHDefenition
+  ( executeTHDefinition
   ) where
 
 import           Extensions.THDefinition (genFunc)
@@ -15,7 +15,7 @@ import           Extensions.THDefinition (genFunc)
 --
 $(genFunc "square" [|\x -> x * x|])
 
-executeTHDefenition :: IO ()
-executeTHDefenition = do
+executeTHDefinition :: IO ()
+executeTHDefinition = do
   let x = 5
   putStrLn $ "Square of " ++ show x ++ " is " ++ show (square x)
