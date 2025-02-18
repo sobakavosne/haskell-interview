@@ -1,8 +1,9 @@
 module Challenges.Alexa where
 
-import           Data.List       (insert, isPrefixOf)
-import qualified Data.SuffixTree as SufT
-import           Prelude         hiding (elem)
+import           Data.List (isPrefixOf)
+
+-- import qualified Data.SuffixTree as SufT
+import           Prelude   hiding (elem)
 
 -- foobar
 -- barfoo
@@ -26,13 +27,10 @@ dictionary = ["foo", "bar", "fizz", "fir", "fi", "iop"]
 ----------------------------------------------------------------
 -- Function that checks whether string s can be constructed from words in the list
 canConstruct :: String -> [String] -> Bool
-canConstruct word words = go word
+canConstruct word' xs = go word'
   where
-    go [] = True -- If the string is empty, it can be constructed
-    go str =
-      any
-        (\word -> (word `isPrefixOf` str) && go (drop (length word) str))
-        words
+    go []   = True -- If the string is empty, it can be constructed
+    go word = any (\x -> (x `isPrefixOf` word) && go (drop (length x) word)) xs
 
 wordList :: [String]
 wordList = ["Foo", "Bar", "Car", "Bob", "Sirius"]
@@ -43,10 +41,10 @@ inputWord = "FooBarSirius"
 -- $> canConstruct inputWord wordList
 --
 ----------------------------------------------------------------
--- isCompaund :: String -> SufT.STree -> Bool
--- isCompaund :: String -> [String] -> Bool
--- isCompaund word xs = word `SufT.elem` tree
+-- isCompound :: String -> SufT.STree -> Bool
+-- isCompound :: String -> [String] -> Bool
+-- isCompound word xs = word `SufT.elem` tree
 --
 -- tree = SufT.construct ["Key", "Word", "Insert"]
 --
---- $> isCompaund "Key" ["Key", "Word", "Insert"]
+--- $> isCompound "Key" ["Key", "Word", "Insert"]

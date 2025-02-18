@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+
 module Challenges.TernarySearch where
 
 import           Data.List (sort)

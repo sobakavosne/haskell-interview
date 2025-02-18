@@ -1,5 +1,6 @@
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE NoImplicitPrelude          #-}
+{-# OPTIONS_GHC -Wno-name-shadowing #-}
 
 module Challenges.UniquePath where
 
