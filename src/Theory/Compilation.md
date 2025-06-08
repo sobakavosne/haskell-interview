@@ -46,7 +46,7 @@ module X where
   X.f :: Data.Bool.Bool -> Data.Bool.Bool
   X.f x = case x of
     Data.Bool.True -> Data.Bool.False
-    Data.Bool.False -> Data.Bool.False
+    Data.Bool.False -> Data.Bool.True
 
 6. Compile Core -> STG (Spineless Tagless G-machine)
 
