@@ -41,6 +41,7 @@ library
     Trees.RadixTree
 
   build-depends:
+    , async
     , base
     , containers
     , mtl
