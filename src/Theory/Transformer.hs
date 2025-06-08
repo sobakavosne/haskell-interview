@@ -13,7 +13,7 @@ incrementCounter = do
 
 main :: IO ((), Int)
 main = do
-  runStateT incrementCounter 0
+  _ <- runStateT incrementCounter 0
   runStateT incrementCounter 1
 --
 -- $> main
