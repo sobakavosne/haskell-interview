@@ -10,7 +10,8 @@ data List a
   = Nil
   | Cons a (List a)
 
-For a string of 1000 symbols there are 2001 objects in a heap
+For a string of 1000 symbols there are 2001 objects in a heap:
+  1000 (Char) + 1000 (Cons) + 1 (Nil) = 2001
 
 Text.size "he¬lo" == 5
 ByteString.size "he¬lo" == 6
